@@ -26,7 +26,7 @@ Access           PUBLIC
 Parameter        NONE
 Methods          GET
 */
-//Eg:  http://localhost:3000/
+//Eg:  https://booksite-api.herokuapp.com/
 app.get("/", (req, res) => {
     return res.json({"Welcome Message": `Welcome to my Backend API for the 'BOOK-SITE' Website. Refer the files in 'database' folder for the detailed schemas and the data for collections' I had entered in my Mongodb database and refer 'req.txt' for schema overview . You can use example url above a GET, PUT, POST, DELETE route to make request. However, for POST and PUT requests you have to provide data in request body. You can use Postman to make requests to the API.`});
 });
@@ -39,7 +39,7 @@ Access           PUBLIC
 Parameter        NONE
 Methods          GET
 */
-//Eg: http://localhost:3000/books
+//Eg: https://booksite-api.herokuapp.com/books
 app.get("/books", async (req, res) => {
     const getAllBooks = await BookModel.find();
     return res.json(getAllBooks);
@@ -53,7 +53,7 @@ Access           PUBLIC
 Parameter        NONE
 Methods          GET
 */
-//Eg: http://localhost:3000/books/61edbac32ed756bc095333a0
+//Eg: https://booksite-api.herokuapp.com/books/61edbac32ed756bc095333a0
 app.get("/books/:id", async(req,res) =>{
     const {id}=req.params;
     const getBook = await BookModel.findById(id);
@@ -71,7 +71,7 @@ Access           PUBLIC
 Parameter        isbn
 Methods          GET
 */
-//Eg: http://localhost:3000/book-isbn/3469ab
+//Eg: https://booksite-api.herokuapp.com/book-isbn/3469ab
 app.get("/book-isbn/:isbn", async (req, res) => {
     const {isbn} = req.params;
     const getSpecificBook = await BookModel.findOne({ISBN: isbn});
@@ -89,7 +89,7 @@ Access           PUBLIC
 Parameter        category
 Methods          GET
 */
-//Eg: http://localhost:3000/book-category/programming
+//Eg: https://booksite-api.herokuapp.com/book-category/programming
 app.get("/book-category/:category", async (req, res) => {
     const {category} = req.params;
     const getSpecificBooks = await BookModel.find({category:category});
@@ -107,7 +107,7 @@ Access           PUBLIC
 Parameter        NONE
 Methods          GET
 */
-//Eg: http://localhost:3000/authors
+//Eg: https://booksite-api.herokuapp.com/authors
 app.get("/authors", async (req, res) => {
     const getAllAuthors = await AuthorModel.find();
     return res.json(getAllAuthors);
@@ -121,7 +121,7 @@ Access           PUBLIC
 Parameter        NONE
 Methods          GET
 */
-//Eg: http://localhost:3000/author-id/61edb95b2ed756bc0953339e
+//Eg: https://booksite-api.herokuapp.com/author-id/61edb95b2ed756bc0953339e
 app.get("/author-id/:id", async (req, res) => {
   
     const {id} = req.params;
@@ -141,7 +141,7 @@ Access           PUBLIC
 Parameter        NONE
 Methods          GET
 */
-//Eg: http://localhost:3000/author-isbn/7rab21d
+//Eg: https://booksite-api.herokuapp.com/author-isbn/7rab21d
 app.get("/author-isbn/:isbn", async (req, res) => {
    const {isbn} = req.params;
    const getSpecificAuthors = await AuthorModel.find({books:isbn});
@@ -159,7 +159,7 @@ Access           PUBLIC
 Parameter        NONE
 Methods          GET
 */
-//Eg: http://localhost:3000/publications
+//Eg: https://booksite-api.herokuapp.com/publications
 app.get("/publications", async(req, res) => {
     const getAllPublications = await PublicationModel.find({});
     return res.json(getAllPublications);
@@ -173,7 +173,7 @@ Access           PUBLIC
 Parameter        NONE
 Methods          GET
 */
-//Eg: http://localhost:3000/publications/61eeaf3645930a7d8c9d6d67
+//Eg: https://booksite-api.herokuapp.com/publications/61eeaf3645930a7d8c9d6d67
 app.get("/publications/:id", async(req, res) => {
    
     const {id}=req.params;
@@ -192,7 +192,7 @@ Access           PUBLIC
 Parameter        NONE
 Methods          GET
 */
-//Eg: http://localhost:3000/publication-isbn/12345Two
+//Eg: https://booksite-api.herokuapp.com/publication-isbn/12345Two
 app.get("/publication-isbn/:isbn", async(req, res) => {
     const {isbn}=req.params;
 const getPublication= await PublicationModel.find({books:isbn });
@@ -209,7 +209,7 @@ Access           PUBLIC
 Parameter        NONE
 Methods          POST
 */
-//Eg: http://localhost:3000/book
+//Eg: https://booksite-api.herokuapp.com/book
 app.post("/book", async (req, res) => {
     const addNewBook = await BookModel.create(req.body);
     return res.json( {bookAdded: addNewBook, message: "Book was added !!!"} );
@@ -223,7 +223,7 @@ Access           PUBLIC
 Parameter        NONE
 Methods          POST
 */
-//Eg: http://localhost:3000/author
+//Eg: https://booksite-api.herokuapp.com/author
 app.post("/author", async (req, res) => {
     const addNewAuthor = await AuthorModel.create(req.body);
     return res.json( {authorAdded: addNewAuthor, message: "Author was added !!!"} );
@@ -237,7 +237,7 @@ Access           PUBLIC
 Parameter        NONE
 Methods          POST
 */
-//Eg: http://localhost:3000/publication
+//Eg: https://booksite-api.herokuapp.com/publication
 app.post("/publication", async(req, res) => {
     const addNewPublication= await PublicationModel.create(req.body);
     return res.json({publisherAdded: addNewPublication, message: "Publisher was added"});
@@ -251,7 +251,7 @@ Access           PUBLIC
 Parameter        NONE
 Methods          PUT
 */
-//Eg: http://localhost:3000/book-update/61edbac32ed756bc095333a0
+//Eg: https://booksite-api.herokuapp.com/book-update/61edbac32ed756bc095333a0
 app.put("/book-update/:id", async (req, res) => {
     const {id} = req.params;
     const updatedBook = await BookModel.findByIdAndUpdate(id, req.body, {new: true});
@@ -269,7 +269,7 @@ Access           PUBLIC
 Parameter        NONE
 Methods          PUT
 */
-//Eg: http://localhost:3000/book-update/book-isbn/123Two
+//Eg: https://booksite-api.herokuapp.com/book-update/book-isbn/123Two
 app.put("/book-update/book-isbn/:isbn", async (req, res) => {
     const {isbn} = req.params;
     const updatedBook = await BookModel.findOneAndUpdate({ISBN: isbn}, req.body, {new: true});
@@ -287,7 +287,7 @@ Access           PUBLIC
 Parameter        NONE
 Methods          PUT
 */
-//Eg: http://localhost:3000/author-update/61eeaec145930a7d8c9d6d60
+//Eg: https://booksite-api.herokuapp.com/author-update/61eeaec145930a7d8c9d6d60
 app.put("/author-update/:id", async (req, res) => {
     const {id} = req.params;
     const updatedAuthor = await AuthorModel.findOneAndUpdate({_id: id}, req.body, {new: true});
@@ -305,7 +305,7 @@ Access           PUBLIC
 Parameter        NONE
 Methods          PUT
 */
-//Eg: http://localhost:3000/publication-update/61eeaf3645930a7d8c9d6d67
+//Eg: https://booksite-api.herokuapp.com/publication-update/61eeaf3645930a7d8c9d6d67
 app.put("/publication-update/:id", async(req, res) => {
     const {id}=req.params;
     const updatedPublisher = await PublicationModel.findOneAndUpdate({_id:id},req.body, {new:true});
@@ -323,7 +323,7 @@ Access           PUBLIC
 Parameter        NONE
 Methods          DELETE
 */
-//Eg: http://localhost:3000/book-delete/61eeb37345930a7d8c9d6d7e
+//Eg: https://booksite-api.herokuapp.com/book-delete/61eeb37345930a7d8c9d6d7e
 app.delete("/book-delete/:id", async (req, res) => {
     const {id} = req.params;
     const deletedBook = await BookModel.findByIdAndDelete(id,{new:true});
@@ -341,7 +341,7 @@ Access           PUBLIC
 Parameter        NONE
 Methods          DELETE
 */
-//Eg: http://localhost:3000/book-delete/book-isbn/12345ONE
+//Eg: https://booksite-api.herokuapp.com/book-delete/book-isbn/12345ONE
 app.delete("/book-delete/book-isbn/:isbn", async (req, res) => {
     const {isbn} = req.params;
     const deletedBook = await BookModel.deleteOne({ISBN: isbn});
@@ -359,7 +359,7 @@ Access           PUBLIC
 Parameter        NONE
 Methods          DELETE
 */
-//Eg: http://localhost:3000/book-author-delete/231egh/61eeaec145930a7d8c9d6d60
+//Eg: https://booksite-api.herokuapp.com/book-author-delete/231egh/61eeaec145930a7d8c9d6d60
 app.delete("/book-author-delete/:isbn/:id", async (req, res) => {
     const {isbn, id} = req.params;
     let getSpecificBook = await BookModel.findOne({ISBN: isbn});
@@ -381,7 +381,7 @@ Access           PUBLIC
 Parameter        NONE
 Methods          DELETE
 */
-//Eg: http://localhost:3000/author-book-delete/61eeaec145930a7d8c9d6d61/3469ab
+//Eg: https://booksite-api.herokuapp.com/author-book-delete/61eeaec145930a7d8c9d6d61/3469ab
 app.delete("/author-book-delete/:id/:isbn", async(req, res) => {
     const {isbn, id}= req.params;
     let getSpecificAuthor = await AuthorModel.findOne({_id:id});
@@ -403,7 +403,7 @@ Access           PUBLIC
 Parameter        NONE
 Methods          DELETE
 */
-//Eg: http://localhost:3000/author-delete/61eeaec145930a7d8c9d6d62
+//Eg: https://booksite-api.herokuapp.com/author-delete/61eeaec145930a7d8c9d6d62
 app.delete("/author-delete/:id",  async(req, res) => {
 const {id}= req.params;
 let authorDeleted = await AuthorModel.findByIdAndRemove(id);
@@ -421,7 +421,7 @@ Access           PUBLIC
 Parameter        NONE
 Methods          DELETE
 */
-//Eg: http://localhost:3000/publication-delete/61eeaf3645930a7d8c9d6d68
+//Eg: https://booksite-api.herokuapp.com/publication-delete/61eeaf3645930a7d8c9d6d68
 app.delete("/publication-delete/:id", async(req, res) => {
 const {id}=req.params;
 let publicationDeleted = await PublicationModel.findByIdAndRemove(id);
