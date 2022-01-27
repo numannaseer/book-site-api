@@ -1,2 +1,5 @@
 /node_modules
 .env
+authors.json
+books.json
+publications.json
