@@ -1,5 +1,5 @@
 # BOOK-SITE-API
-Node.js, Express Backend API for maintaining Books, Authors and Publications in MongoDB corresponding to BOOK-SITE website.
+Node.js, Express.js Backend API for maintaining Books, Authors and Publications in MongoDB corresponding to my BOOK-SITE website.
 
 
 ```
@@ -10,8 +10,8 @@ or
 nodemon index.js
 ```
   
-The API is developed using “Express js” javascript library  (“Node js” runtime environment). 
-“MongoDB”  has been used to store the data related to various collections of BOOK-SITE API database. 
+The API is developed using “Express.js” javascript library  (“Node.js” runtime environment). 
+“MongoDB”  has been used to store the data related to various collections of BOOK-SITE website. 
 “Mongoose” library is used to make requests to the MongoDB database. 
 Refer the source code on github to get schema details: https://github.com/numannaseer/book-site-api  
 The requests have been made using “POSTMAN” app. 
