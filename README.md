@@ -19,3 +19,6 @@ The various types of requests that can be made to this REST API are “GET”, �
 Every response is in JSON format.
 If you are interested in making requests yourself, you can make the requests at the backend that I have deployed at HEROKU:  https://booksite-api.herokuapp.com/  
 Note: While making “POST” and “PUT” requests, do remember to insert the correct data in the request body. Refer schema in source code before making these two requests as Mongoose validation is involved in the backend.
+
+Link to document containing screenshots of various Requests made to my BOOK-SITE's Backend REST API :  
+https://docs.google.com/document/d/1sNGRzsTwm_hQyme-DKzWKeSYU4s0fR79swwAfi7sfc8/edit
