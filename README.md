@@ -9,7 +9,7 @@ node index.js
 or
 nodemon index.js
 ```
-This document contains screenshots of various Requests made to my BOOK-SITE’s Backend REST API.  
+  
 The API is developed using “Express js” javascript library  (“Node js” runtime environment). 
 “MongoDB”  has been used to store the data related to various collections of BOOK-SITE API database. 
 “Mongoose” library is used to make requests to the MongoDB database. 
