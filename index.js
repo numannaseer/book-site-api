@@ -28,7 +28,7 @@ Methods          GET
 */
 //Eg:  https://booksite-api.herokuapp.com/
 app.get("/", (req, res) => {
-    return res.json({"Welcome Message": `Welcome to my Backend API for the 'BOOK-SITE' Website. Refer the files in 'database' folder for the detailed schemas and the data for collections' I had entered in my Mongodb database and refer 'req.txt' for schema overview . You can use example url above a GET, PUT, POST, DELETE route to make request. However, for POST and PUT requests you have to provide data in request body. You can use Postman to make requests to the API.`});
+    return res.json({"Welcome Message": `Welcome to my Backend API for the 'BOOK-SITE' Website. Refer the files in 'database' folder for the detailed schemas and the data for collections' I had entered in my Mongodb database, and refer 'req.txt' for schema overview . You can use example url above a GET, PUT, POST, DELETE route in 'index.js' to make request. However, for POST and PUT requests you have to provide data in request body. You can use Postman to make requests to the API. Link to source code:  https://github.com/numannaseer/book-site-api `});
 });
 
 
