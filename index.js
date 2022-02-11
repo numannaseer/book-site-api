@@ -17,7 +17,8 @@ mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true}).the
 .catch((error)=>{console.log("Connection to Mongodb can't be established. Refer the error message for details.", error)});
 
 
-//All the Routes to serve requests related to the book-site Database
+//All the Routes to serve incoming requests from my website/book-site called bookdeets.com (front-end yet to be developed).
+//Refer 'README' file in source code for more details.
 
 /*
 Route            /
@@ -28,7 +29,7 @@ Methods          GET
 */
 //Eg:  https://booksite-api.herokuapp.com/
 app.get("/", (req, res) => {
-    return res.json({"Welcome Message": `Welcome to my Backend API for the 'BOOK-SITE' Website. Refer the files in 'database' folder for the detailed schemas and the data for collections' I had entered in my Mongodb database, and refer 'req.txt' for schema overview . You can use example url above a GET, PUT, POST, DELETE route in 'index.js' to make request. However, for POST and PUT requests you have to provide data in request body. You can use Postman to make requests to the API. Link to source code:  https://github.com/numannaseer/book-site-api `});
+    return res.json({"Welcome Message": `Welcome to my Backend API for the 'bookdeets.com' Website. I highly recommend you to read the 'README' file before making any request. You can use example url above a GET, PUT, POST, DELETE route in 'index.js' to make a request. However, for POST and PUT requests you have to provide data in request body. You can use Postman to make requests to the API. Link to source code:  https://github.com/numannaseer/book-site-api `});
 });
 
 
